@@ -1,0 +1,17 @@
+syntax = "proto3";
+package mail_v1;
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/Dragzet/registration-service/mail-service/pkg/mail_v1;mail_v1";
+
+service MailV1 {
+  rpc CheckUniqueCode(CheckUniqueCodeRequest) returns (google.protobuf.Empty);
+}
+
+message CheckUniqueCodeRequest {
+  string email = 1;
+  string code = 2;
+  string accessToken = 3;
+}
+
+
